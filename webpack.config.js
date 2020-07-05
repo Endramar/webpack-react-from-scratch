@@ -1,5 +1,5 @@
 const path = require('path');
-
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     mode: 'development',
@@ -29,9 +29,17 @@ module.exports = {
                                 localIdentName: '[name]__[local]__[hash:base64:5]'
                             }
                         }
+                    },
+                    {
+                        loader: 'postcss-loader', options: {
+                            ident: 'postcss',
+                            plugins: () => [autoprefixer()]
+                        }
                     }
                 ]
             }
+
         ]
+
     }
 }
