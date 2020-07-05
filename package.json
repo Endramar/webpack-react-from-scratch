@@ -37,11 +37,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "babel-polyfill": "^6.26.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "regenerator-runtime": "^0.13.5",
     "webpack-cli": "^3.3.12"
   }
 }

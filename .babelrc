@@ -1,5 +1,5 @@
 {
-    "presets" :   [
+    "presets": [
         ["@babel/preset-env", {
             "targets": {
                 "browsers": [
@@ -11,7 +11,7 @@
         }],
         "@babel/preset-react"
     ],
-    "plugins" : [
+    "plugins": [
         "@babel/plugin-proposal-class-properties"
     ]
 }
