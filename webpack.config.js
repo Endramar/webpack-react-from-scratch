@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        fileName: 'bundle.js',
+        filename: 'bundle.js',
         publicPath: ''
     },
     devtool: 'cheap-module-eval-source-map', // This is for debugging to work. 
@@ -25,7 +25,7 @@ module.exports = {
                     { loader: 'style-loader' },
                     {
                         loader: 'css-loader', options: {
-                            importLoader: 1,
+                            importLoaders: 1,
                             modules: {
                                 localIdentName: '[name]__[local]__[hash:base64:5]'
                             }
@@ -40,14 +40,17 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png | jpe?g | gif)$/,
-                loader: 'url-loader?limit=8000&name=images/[name].[ext]'  // loader for image files. stores the files in (images/*) when built.
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                }
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + 'src/index.html',
+            template: __dirname + '/src/index.html',
             filename: 'index.html',
             inject: 'body'
         })

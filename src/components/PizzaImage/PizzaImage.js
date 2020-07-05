@@ -1,11 +1,11 @@
 import React from 'react';
 
 import classes from './PizzaImage.css';
-import PizzaImage from '../../assets/pizza.jpg';
+import pizzaImageFile from '../../assets/pizza.jpg';
 
 const pizzaImage = (props) => {
     return <div className={classes.PizzaImage}>
-        <img src={PizzaImage} className={classes.PizzaImg}></img>
+        <img src={pizzaImageFile} className={classes.PizzaImg}></img>
     </div>
 }
 
